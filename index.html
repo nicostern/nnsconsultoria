@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolas N. Stern | Consultoria em TI, Controladoria e BI em Joinville e Região</title>
     
+    <!-- FAVICON (ÍCONE DA ABA DO NAVEGADOR) -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="logo.png">
+    
     <!-- Meta Tags Otimizadas para SEO On-Page e Redes Sociais -->
     <meta name="description" content="NNS Consultoria Inteligente: Aumente a margem de lucro e a eficiência operacional da sua empresa unindo Governança de TI, Controladoria Financeira e Inteligência de Dados em Joinville e SC.">
     <meta name="keywords" content="Consultoria de TI Joinville, Controladoria Financeira, Business Intelligence, Governança de TI, Otimização de Processos, Nicolas Stern">
     <meta property="og:title" content="Nicolas N. Stern | NNS Consultoria Inteligente">
     <meta property="og:description" content="Aumente a margem de lucro e a eficiência operacional da sua empresa unindo Governança de TI, Controladoria e BI.">
+    <meta property="og:image" content="logo.png">
     <meta property="og:type" content="website">
 
     <!-- SEO LOCAL E DADOS ESTRUTURADOS (JSON-LD) -->
@@ -18,9 +23,9 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "NNS Consultoria Inteligente",
-      "image": "https://nicostern.github.io/nnsconsultoria/",
-      "@id": "https://nicostern.github.io/nnsconsultoria/",
-      "url": "https://nicostern.github.io/nnsconsultoria/",
+      "image": "https://nnsconsultoria.com.br/logo.png",
+      "@id": "https://nnsconsultoria.com.br/",
+      "url": "https://nnsconsultoria.com.br/",
       "telephone": "",
       "priceRange": "$$$",
       "address": {
@@ -119,13 +124,19 @@
         }
 
         .logo {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 800;
             color: var(--text-heading);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
+        }
+
+        .logo img {
+            height: 38px;
+            width: auto;
+            display: block;
         }
 
         .logo span {
@@ -291,14 +302,20 @@
             width: 90px;
             height: 90px;
             border-radius: 20px;
-            background: var(--gradient-primary);
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
-            color: #fff;
             margin-bottom: 1.5rem;
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            padding: 10px;
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .profile-title {
@@ -384,7 +401,7 @@
             font-size: 1.05rem;
         }
 
-        /* --- CASES DE SUCESSO / PROVA SOCIAL & DEPOIMENTOS --- */
+        /* --- CASES DE SUCESSO --- */
         .cases-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -487,7 +504,7 @@
             color: var(--accent);
         }
 
-        /* --- SERVIÇOS & CARDS ENRIQUECIDOS --- */
+        /* --- SERVIÇOS --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -561,7 +578,7 @@
             border-radius: 4px;
         }
 
-        /* --- FLUXO / METODOLOGIA DE TRABALHO --- */
+        /* --- METODOLOGIA --- */
         .workflow-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -597,7 +614,7 @@
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
-        /* --- ARTIGOS & INSIGHTS --- */
+        /* --- ARTIGOS --- */
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -655,7 +672,7 @@
             gap: 0.4rem;
         }
 
-        /* --- TABS SYSTEM --- */
+        /* --- TABS --- */
         .tabs-container {
             display: flex;
             justify-content: center;
@@ -705,7 +722,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- FORMULÁRIO COM UX APRIMORADA --- */
+        /* --- FORMULÁRIO --- */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -797,7 +814,7 @@
             margin-top: 0.5rem;
         }
 
-        /* --- BOTÃO FLUTUANTE DO WHATSAPP --- */
+        /* --- BOTÃO WHATSAPP --- */
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
@@ -877,10 +894,13 @@
 </head>
 <body>
 
-    <!-- NAVBAR STICKY -->
+    <!-- NAVBAR STICKY COM A SUA NOVA LOGO -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">NNS<span>.Consultoria</span></a>
+            <a href="#" class="logo">
+                <img src="logo.png" alt="NNS Consultoria Logo">
+                NNS<span>.Consultoria</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#servicos">Serviços</a></li>
@@ -913,10 +933,10 @@
             </div>
         </div>
 
-        <!-- PROFILE CARD -->
+        <!-- PROFILE CARD COM LOGO OFICIAL -->
         <div class="profile-card">
             <div class="profile-avatar">
-                <i class="fa-solid fa-user-tie"></i>
+                <img src="logo.png" alt="Monograma NNS">
             </div>
             <div class="profile-title">Nicolas N. Stern</div>
             <div class="profile-subtitle">NNS Consultoria Inteligente</div>
@@ -950,7 +970,7 @@
         </div>
     </div>
 
-    <!-- SEÇÃO 2: CASOS DE USO / PROVA SOCIAL COM COTAÇÕES -->
+    <!-- SEÇÃO 2: CASOS DE USO / PROVA SOCIAL -->
     <section class="section" id="cases">
         <div class="section-header">
             <div class="badge"><i class="fa-solid fa-bullseye"></i> Resultados Reais</div>
@@ -1031,7 +1051,6 @@
         </div>
 
         <div class="services-grid">
-            <!-- SERVIÇO 1 -->
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fa-solid fa-laptop-code"></i>
@@ -1051,7 +1070,6 @@
                 </div>
             </div>
 
-            <!-- SERVIÇO 2 -->
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fa-solid fa-chart-line"></i>
@@ -1070,7 +1088,6 @@
                 </div>
             </div>
 
-            <!-- SERVIÇO 3 -->
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fa-solid fa-database"></i>
@@ -1127,7 +1144,7 @@
         </div>
     </section>
 
-    <!-- ARTIGOS & INSIGHTS (THOUGHT LEADERSHIP) -->
+    <!-- ARTIGOS & INSIGHTS -->
     <section class="section" id="artigos">
         <div class="section-header">
             <div class="badge"><i class="fa-solid fa-book-open"></i> Thought Leadership</div>
@@ -1167,7 +1184,6 @@
             <p>Acreditações oficiais e acadêmicas das principais instituições e Big Techs globais.</p>
         </div>
 
-        <!-- TABS DE NAVEGAÇÃO -->
         <div class="tabs-container">
             <button class="tab-btn active" onclick="openTab(event, 'tab-certificacoes')">
                 <i class="fa-solid fa-award"></i> Certificações de Mercado
@@ -1177,11 +1193,8 @@
             </button>
         </div>
 
-        <!-- ABA 1: CERTIFICAÇÕES -->
         <div id="tab-certificacoes" class="tab-content active">
             <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                
-                <!-- MICROSOFT -->
                 <div class="service-card" style="border-top: 3px solid #00A4EF;">
                     <div style="font-size: 1.75rem; color: #00A4EF; margin-bottom: 1rem;">
                         <i class="fa-brands fa-microsoft"></i>
@@ -1191,7 +1204,6 @@
                     <p style="font-size: 0.85rem;">Administração avançada de ambiente Microsoft 365, colaboração corporativa e produtividade em nuvem.</p>
                 </div>
 
-                <!-- COMPTIA -->
                 <div class="service-card" style="border-top: 3px solid #C00000;">
                     <div style="font-size: 1.75rem; color: #C00000; margin-bottom: 1rem;">
                         <i class="fa-solid fa-shield-halved"></i>
@@ -1201,7 +1213,6 @@
                     <p style="font-size: 0.85rem;">Certificação internacional em segurança da informação, gestão de riscos e proteção de infraestruturas.</p>
                 </div>
 
-                <!-- GOOGLE -->
                 <div class="service-card" style="border-top: 3px solid #EA4335;">
                     <div style="font-size: 1.75rem; color: #EA4335; margin-bottom: 1rem;">
                         <i class="fa-brands fa-google"></i>
@@ -1210,15 +1221,11 @@
                     <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Google</p>
                     <p style="font-size: 0.85rem;">Estratégias avançadas de tráfego pago, aquisição de clientes e otimização de campanhas de performance.</p>
                 </div>
-
             </div>
         </div>
 
-        <!-- ABA 2: ACADÊMICO -->
         <div id="tab-academic" class="tab-content">
             <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-                
-                <!-- UNINTER -->
                 <div class="service-card" style="border-left: 4px solid var(--accent);">
                     <div style="font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Pós-Graduação Lato Sensu</div>
                     <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">MBA em Gestão Financeira, Auditoria e Controladoria</h3>
@@ -1226,7 +1233,6 @@
                     <p style="font-size: 0.85rem;">Gestão de fluxo de caixa, análise de desempenho financeiro, governança e planejamento orçamentário.</p>
                 </div>
 
-                <!-- HARVARD -->
                 <div class="service-card" style="border-left: 4px solid #A51C30;">
                     <div style="font-size: 0.75rem; color: #F87171; font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Executivo / Liderança</div>
                     <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Managing Yourself</h3>
@@ -1234,7 +1240,6 @@
                     <p style="font-size: 0.85rem;">Gestão de carreira, autoliderança, produtividade e gestão estratégica do tempo.</p>
                 </div>
 
-                <!-- UNOPAR -->
                 <div class="service-card" style="border-left: 4px solid var(--primary-light);">
                     <div style="font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Master of Business Administration</div>
                     <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">MBA em Gestão de Tecnologia da Informação</h3>
@@ -1242,7 +1247,6 @@
                     <p style="font-size: 0.85rem;">Gestão de riscos, compliance tecnológico e planejamento estratégico de TI.</p>
                 </div>
 
-                <!-- ANHANGUERA -->
                 <div class="service-card" style="border-left: 4px solid var(--primary-light);">
                     <div style="font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Curso Superior de Tecnologia</div>
                     <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Marketing Digital</h3>
@@ -1250,7 +1254,6 @@
                     <p style="font-size: 0.85rem;">Inbound Marketing, estratégias de conteúdo e métricas de crescimento acelerado.</p>
                 </div>
 
-                <!-- UNIVERSIDADE POSITIVO -->
                 <div class="service-card" style="border-left: 4px solid var(--primary-light);">
                     <div style="font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Bacharelado</div>
                     <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Sistemas de Informação</h3>
@@ -1258,19 +1261,17 @@
                     <p style="font-size: 0.85rem;">Desenvolvimento de sistemas, arquitetura de banco de dados e engenharia de software.</p>
                 </div>
 
-                <!-- ENAP & SOCIESC -->
                 <div class="service-card" style="border-left: 4px solid var(--border);">
                     <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Especializações Técnicas</div>
                     <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Gestão de TI & Suporte Especializado</h3>
                     <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Sociesc Educação e Tecnologia</p>
                     <p style="font-size: 0.85rem;">Administração de infraestruturas de TI, suporte avançado a sistemas e gestão de serviços.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- FORMULÁRIO OTIMIZADO -->
+    <!-- FORMULÁRIO -->
     <section class="section" id="contato">
         <div class="contact-container">
             <div class="contact-info">
@@ -1290,12 +1291,11 @@
                     <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                     <div>
                         <div style="font-size: 0.85rem; color: var(--text-muted);">E-mail Direto</div>
-                        <a href="mailto:nnsconsultoria1@gmail.com" style="color: var(--text-heading); text-decoration: none; font-weight: 600;">nnsconsultoria1@gmail.com</a>
+                        <a href="mailto:nnsconsultoria@gmail.com" style="color: var(--text-heading); text-decoration: none; font-weight: 600;">nnsconsultoria@gmail.com</a>
                     </div>
                 </div>
             </div>
 
-            <!-- FORMULÁRIO COM BOTAO ESPECÍFICO E MENSAGEM DE PRIVACIDADE -->
             <form class="contact-form" action="https://formspree.io/f/xbjnqkyv" method="POST">
                 <div class="form-group">
                     <label for="name">Seu Nome / Nome da Empresa</label>
@@ -1323,12 +1323,12 @@
         </div>
     </section>
 
-    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
-    <a href="https://wa.me/5547telefone?text=Ol%C3%A1%20Nicolas,%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20inicial%20para%20minha%20empresa." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contato via WhatsApp">
+    <!-- BOTÃO WHATSAPP -->
+    <a href="https://wa.me/5547999368655?text=Ol%C3%A1%20Nicolas,%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20inicial%20para%20minha%20empresa." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contato via WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- FOOTER COM COPYRIGHT DINÂMICO -->
+    <!-- FOOTER -->
     <footer>
         <div class="footer-socials">
             <a href="https://www.linkedin.com/in/sternnicolas/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>

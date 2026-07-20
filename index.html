@@ -4,242 +4,626 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolas N. Stern | NNS Consultoria Inteligente</title>
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-color: #0F172A;
-            --accent-color: #2563EB;
-            --accent-hover: #1D4ED8;
-            --text-main: #334155;
+            --bg-dark: #0B0F19;
+            --bg-card: #111827;
+            --primary: #2563EB;
+            --primary-light: #3B82F6;
+            --primary-dark: #1D4ED8;
+            --accent: #38BDF8;
+            --text-heading: #F8FAFC;
+            --text-body: #94A3B8;
             --text-muted: #64748B;
-            --bg-light: #F8FAFC;
-            --white: #FFFFFF;
-            --border-color: #E2E8F0;
+            --border: #1E293B;
+            --gradient-primary: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
+            --gradient-glow: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(56, 189, 248, 0.05) 100%);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            color: var(--text-main);
-            background-color: var(--bg-light);
+            background-color: var(--bg-dark);
+            color: var(--text-body);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Header / Hero Section */
-        header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 4rem 1.5rem;
-            text-align: center;
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-heading);
         }
 
-        .hero-content {
-            max-width: 800px;
+        /* --- NAVBAR --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-        }
-
-        .hero-content .subtitle {
+        .logo {
             font-size: 1.25rem;
-            color: #94A3B8;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
-
-        .hero-content p {
-            font-size: 1.1rem;
-            color: #CBD5E1;
-            margin-bottom: 2rem;
-        }
-
-        /* Container Principal */
-        .container {
-            max-width: 1050px;
-            margin: -2rem auto 3rem auto;
-            padding: 0 1.5rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Cards Gerais */
-        .card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
-            border: 1px solid var(--border-color);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent-color);
-            border-radius: 2px;
-        }
-
-        /* Grid de Serviços / Pilares */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .service-card {
-            background-color: var(--bg-light);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.75rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
-        }
-
-        .service-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.75rem;
-            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
+        .logo span {
+            color: var(--accent);
         }
 
-        /* Seção Contato / CTA */
-        .contact-box {
+        .nav-links {
             display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            align-items: flex-start;
+            gap: 2rem;
+            list-style: none;
         }
 
-        .cta-button {
+        .nav-links a {
+            color: var(--text-body);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-nav {
+            background: var(--gradient-primary);
+            color: #fff !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            transition: transform 0.2s, box-shadow 0.2s !important;
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(37, 99, 235, 0.2);
+            filter: blur(120px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .badge {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            background-color: var(--accent-color);
-            color: var(--white);
-            padding: 0.85rem 1.75rem;
-            border-radius: 6px;
-            text-decoration: none;
+            gap: 0.5rem;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
             font-weight: 600;
-            font-size: 1rem;
-            transition: background-color 0.2s ease;
+            margin-bottom: 1.5rem;
         }
 
-        .cta-button:hover {
-            background-color: var(--accent-hover);
+        .hero h1 {
+            font-size: 3.25rem;
+            line-height: 1.15;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
         }
 
-        /* Footer */
-        footer {
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #38BDF8 0%, #2563EB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-body);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: #fff;
+            padding: 0.9rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-heading);
+            border: 1px solid var(--border);
+            padding: 0.9rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        /* CARD DE PERFIL HERO */
+        .profile-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            background-image: var(--gradient-glow);
+        }
+
+        .profile-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .profile-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .profile-subtitle {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-body);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+        }
+
+        /* --- NUMEROS DE IMPACTO --- */
+        .stats {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 3rem 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
             text-align: center;
-            padding: 2.5rem 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            color: var(--text-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* --- SEÇÕES --- */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-body);
+            font-size: 1.05rem;
+        }
+
+        /* --- SERVIÇOS / PILARES --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-body);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- SOBRE MIM --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-heading);
+            font-weight: 500;
+        }
+
+        .feature-list i {
+            color: var(--accent);
+        }
+
+        /* --- CONTATO & CTA --- */
+        .cta-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            text-align: center;
+            background-image: var(--gradient-glow);
+            margin-bottom: 6rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
             color: var(--text-muted);
             font-size: 0.9rem;
-            background-color: var(--white);
-            border-top: 1px solid var(--border-color);
         }
 
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2rem;
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-body);
+            font-size: 1.25rem;
+            transition: color 0.3s;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent);
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 992px) {
+            .hero, .about-grid, .services-grid {
+                grid-template-columns: 1fr;
             }
-            .card {
-                padding: 1.5rem;
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .nav-links {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="hero-content">
-            <h1>Nicolas N. Stern</h1>
-            <div class="subtitle">Gerente Administrativo | Especialista em Controladoria</div>
-            <p>NNS Consultoria Inteligente: Conectando gestão estratégica, inteligência de dados e otimização de processos corporativos.</p>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">NNS<span>.Consultoria</span></a>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato" class="btn-nav">Falar Conosco</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <div class="container">
-        <!-- Perfil Profissional -->
-        <section class="card">
-            <h2>Sobre Mim</h2>
-            <p>
-                Atuo como <strong>Gerente Administrativo</strong> com sólida experiência na condução de operações corporativas, processos de tomada de decisão e eficiência organizacional. Sou pós-graduado em <strong>Controladoria</strong>, área que me proporciona uma visão analítica rigorosa sobre gestão financeira, custos e governança.
-            </p>
-            <p>
-                Através da <strong>NNS Consultoria Inteligente</strong>, auxilio empresas e executivos no alinhamento entre diretrizes administrativas, dados estratégicos e soluções tecnológicas para maximizar resultados e garantir a sustentabilidade dos negócios.
-            </p>
-        </section>
-
-        <!-- Pilares de Atuação -->
-        <section class="card">
-            <h2>Especialidades & Serviços</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>📊 Gestão & Controladoria</h3>
-                    <p>Análise de indicadores financeiros, estruturação de processos administrativos, gestão de custos e apoio à governança corporativa para maximizar a margem operacional.</p>
-                </div>
-                <div class="service-card">
-                    <h3>📈 Análise de Dados & BI</h3>
-                    <p>Transformação de dados operacionais e financeiros em relatórios gerenciais e dashboards dinâmicos para subsidiar decisões estratégicas e rápidas.</p>
-                </div>
-                <div class="service-card">
-                    <h3>💻 TI & Processos Digitais</h3>
-                    <p>Apoio na escolha e otimização de sistemas de gestão (ERP/CRM), automação de fluxos de trabalho e implementação de tecnologias focadas na eficiência do negócio.</p>
-                </div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div>
+            <div class="badge">
+                <i class="fa-solid fa-chart-line"></i> Gestão Estratégica & Controladoria
             </div>
-        </section>
-
-        <!-- Contato e Redes -->
-        <section class="card">
-            <h2>Contato & Conexão</h2>
-            <div class="contact-box">
-                <p>
-                    Quer otimizar a gestão e os indicadores da sua empresa ou trocar experiências sobre controladoria e processos? Vamos nos conectar.
-                </p>
-                <a href="https://www.linkedin.com/in/sternnicolas/" target="_blank" rel="noopener noreferrer" class="cta-button">
-                    Acessar Perfil no LinkedIn
+            <h1>Inteligência Financeira e Operacional para <span class="highlight">Impulsionar Empresas</span></h1>
+            <p>Otimize processos, reduza custos e tome decisões estratégicas embasadas em análise avançada de dados e governança corporativa.</p>
+            <div class="hero-cta">
+                <a href="#contato" class="btn-primary">
+                    Solicitar Diagnóstico <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sternnicolas/" target="_blank" class="btn-secondary">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
                 </a>
             </div>
-        </section>
+        </div>
+
+        <!-- PROFILE CARD -->
+        <div class="profile-card">
+            <div class="profile-avatar">
+                <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <div class="profile-title">Nicolas N. Stern</div>
+            <div class="profile-subtitle">Gerente Administrativo | Pós-Graduado em Controladoria</div>
+            <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: var(--text-body);">
+                Especialista na interseção entre gestão executiva, controladoria financeira e inteligência de processos para empresas corporativas.
+            </p>
+            <div class="profile-tags">
+                <span class="tag">Controladoria</span>
+                <span class="tag">Gestão de Custos</span>
+                <span class="tag">Análise de Dados (BI)</span>
+                <span class="tag">Otimização de TI</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUMEROS DE IMPACTO -->
+    <div class="stats">
+        <div class="stats-container">
+            <div>
+                <div class="stat-number">Visão 360°</div>
+                <div class="stat-label">Integração entre Financeiro, TI e Operações</div>
+            </div>
+            <div>
+                <div class="stat-number">Foco em Margem</div>
+                <div class="stat-label">Redução de Ineficiências e Gestão de Custos</div>
+            </div>
+            <div>
+                <div class="stat-number">Data-Driven</div>
+                <div class="stat-label">Decisões com base em Dashboards e Indicadores</div>
+            </div>
+        </div>
     </div>
 
+    <!-- SOBRE MIM -->
+    <section class="section" id="sobre">
+        <div class="about-grid">
+            <div>
+                <div class="badge"><i class="fa-solid fa-id-card"></i> Trajetória Executiva</div>
+                <h2 style="font-size: 2.25rem; margin-bottom: 1.5rem;">Gestão Orientada a Resultados e Governança</h2>
+                <p>Atuando como <strong>Gerente Administrativo</strong> e especialista pós-graduado em <strong>Controladoria</strong>, ajudo organizações a estruturar processos internos com alto rigor analítico e foco em lucratividade.</p>
+                <p>A <strong>NNS Consultoria Inteligente</strong> nasce da necessidade do mercado por soluções integradas que conectam planejamento financeiro, tecnologia e eficiência operacional.</p>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--accent);">Principais Competências:</h3>
+                <ul class="feature-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Gestão de Custos e Controladoria Financeira</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Reestruturação de Processos Administrativos</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Implementação de Relatórios Gerenciais e BI</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Adequação de Sistemas de Gestão (ERP/CRM)</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Estratégias de Marketing & Posicionamento</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="section" id="servicos">
+        <div class="section-header">
+            <div class="badge"><i class="fa-solid fa-cubes"></i> Nossas Soluções</div>
+            <h2>Serviços de Consultoria Inteligente</h2>
+            <p>Soluções sob medida para otimizar os indicadores e a infraestrutura da sua empresa.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-calculator"></i>
+                </div>
+                <h3>Controladoria & Gestão</h3>
+                <p>Estruturação de DRE, fluxo de caixa gerencial, análise de margem de contribuição e planejamento orçamentário focado na sustentabilidade do negócio.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <h3>Inteligência de Dados (BI)</h3>
+                <p>Transformação de dados brutos do seu sistema em painéis visuais automáticos e intuitivos para acompanhamento em tempo real pelo conselho e diretores.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-gears"></i>
+                </div>
+                <h3>Tecnologia & Processos</h3>
+                <p>Mapeamento de gargalos operacionais, automação de fluxos de trabalho e suporte na integração e otimização de softwares de gestão (TI).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION / CONTATO -->
+    <section class="section" id="contato">
+        <div class="cta-section">
+            <div class="badge"><i class="fa-solid fa-paper-plane"></i> Fale Conosco</div>
+            <h2>Pronto para elevar o nível da gestão da sua empresa?</h2>
+            <p>Entre em contato para agendar uma conversa inicial e entender como a NNS Consultoria Inteligente pode agregar valor ao seu negócio.</p>
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com/in/sternnicolas/" target="_blank" class="btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">
+                    <i class="fa-brands fa-linkedin"></i> Conectar no LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Nicolas N. Stern - NNS Consultoria Inteligente. Todos os direitos reservados.</p>
+        <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/sternnicolas/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:nikstern@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2025 Nicolas N. Stern - NNS Consultoria Inteligente. Todos os direitos reservados.</p>
     </footer>
 
 </body>

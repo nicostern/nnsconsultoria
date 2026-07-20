@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicolas N. Stern | NNS Consultoria Inteligente</title>
+    <title>Nicolas N. Stern | Consultoria em TI, Controladoria e BI em Joinville e Região</title>
     
-    <!-- Meta Tags para SEO e Compartilhamento Social -->
-    <meta name="description" content="NNS Consultoria Inteligente: 15+ anos de experiência unindo Gestão Estratégica, Controladoria Financeira e Transformação Digital de TI.">
+    <!-- Meta Tags Otimizadas para SEO On-Page e Redes Sociais -->
+    <meta name="description" content="NNS Consultoria Inteligente: Aumente a margem de lucro e a eficiência operacional da sua empresa unindo Governança de TI, Controladoria Financeira e Inteligência de Dados em Joinville e SC.">
+    <meta name="keywords" content="Consultoria de TI Joinville, Controladoria Financeira, Business Intelligence, Governança de TI, Otimização de Processos, Nicolas Stern">
     <meta property="og:title" content="Nicolas N. Stern | NNS Consultoria Inteligente">
-    <meta property="og:description" content="Conectando pessoas, processos e tecnologia para gerar impacto positivo e sustentável nas organizações.">
+    <meta property="og:description" content="Aumente a margem de lucro e a eficiência operacional da sua empresa unindo Governança de TI, Controladoria e BI.">
     <meta property="og:type" content="website">
 
     <!-- Google Fonts -->
@@ -55,16 +56,16 @@
             color: var(--text-heading);
         }
 
-        /* --- NAVBAR --- */
+        /* --- NAVBAR STICKY --- */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(11, 15, 25, 0.85);
+            background: rgba(11, 15, 25, 0.90);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 0.9rem 0;
         }
 
         .nav-container {
@@ -94,6 +95,7 @@
             display: flex;
             gap: 2rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
@@ -162,10 +164,10 @@
         }
 
         .hero h1 {
-            font-size: 3.25rem;
-            line-height: 1.15;
+            font-size: 3rem;
+            line-height: 1.2;
             font-weight: 800;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             letter-spacing: -0.02em;
         }
 
@@ -175,11 +177,14 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
+        .hero-sub {
             font-size: 1.15rem;
-            color: var(--text-body);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
+            color: #E2E8F0;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            max-width: 620px;
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
         }
 
         .hero-cta {
@@ -338,6 +343,58 @@
             font-size: 1.05rem;
         }
 
+        /* --- CASES DE SUCESSO / PROVA SOCIAL --- */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .case-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: rgba(56, 189, 248, 0.1);
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .case-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-heading);
+        }
+
+        .case-metric {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .case-desc {
+            font-size: 0.9rem;
+            color: var(--text-body);
+        }
+
         /* --- SOBRE MIM --- */
         .about-grid {
             display: grid;
@@ -405,7 +462,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 1.5rem;
-            position: relative;
         }
 
         .workflow-card {
@@ -437,17 +493,7 @@
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
-        .workflow-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .workflow-card p {
-            font-size: 0.9rem;
-            color: var(--text-body);
-        }
-
-        /* --- TABS SYSTEM (FORMAÇÃO E CERTIFICAÇÕES) --- */
+        /* --- TABS SYSTEM --- */
         .tabs-container {
             display: flex;
             justify-content: center;
@@ -497,7 +543,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- FORMULÁRIO DE CONTATO --- */
+        /* --- FORMULÁRIO COM UX APRIMORADA --- */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -512,11 +558,6 @@
         .contact-info h3 {
             font-size: 1.75rem;
             margin-bottom: 1rem;
-        }
-
-        .contact-info p {
-            margin-bottom: 2rem;
-            font-size: 1rem;
         }
 
         .contact-method {
@@ -556,19 +597,27 @@
             color: var(--text-heading);
         }
 
+        /* UX: Input com maior contraste, borda definida e destaque ao focar */
         .form-control {
-            background: var(--bg-dark);
-            border: 1px solid var(--border);
+            background: #0D1322;
+            border: 1.5px solid #334155;
             border-radius: 8px;
-            padding: 0.85rem 1rem;
-            color: var(--text-heading);
+            padding: 0.9rem 1rem;
+            color: #F8FAFC;
             font-size: 0.95rem;
-            transition: border-color 0.3s ease;
+            transition: all 0.25s ease-in-out;
+        }
+
+        .form-control::placeholder {
+            color: #94A3B8;
+            opacity: 0.8;
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--accent);
+            background: #111827;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
         }
 
         textarea.form-control {
@@ -622,13 +671,14 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR STICKY -->
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">NNS<span>.Consultoria</span></a>
             <ul class="nav-links">
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#cases">Impacto Prático</a></li>
                 <li><a href="#metodologia">Como Funciona</a></li>
                 <li><a href="#formacao">Formação</a></li>
                 <li><a href="#contato" class="btn-nav">Falar Conosco</a></li>
@@ -640,10 +690,12 @@
     <section class="hero">
         <div>
             <div class="badge">
-                <i class="fa-solid fa-chart-line"></i> Gestão Executiva & Tecnologia
+                <i class="fa-solid fa-chart-line"></i> Gestão Executiva, TI & Controladoria
             </div>
             <h1>Conectando Pessoas, Processos e <span class="highlight">Tecnologia</span></h1>
-            <p>Mais de 15 anos de experiência aliando governança de TI, inteligência financeira e eficiência operacional para acelerar os resultados da sua empresa.</p>
+            <div class="hero-sub">
+                Aumente a margem de lucro e a eficiência operacional da sua empresa unindo Governança de TI, Controladoria Financeira e Inteligência de Dados.
+            </div>
             <div class="hero-cta">
                 <a href="#contato" class="btn-primary">
                     Solicitar Diagnóstico <i class="fa-solid fa-arrow-right"></i>
@@ -662,7 +714,7 @@
             <div class="profile-title">Nicolas N. Stern</div>
             <div class="profile-subtitle">NNS Consultoria Inteligente</div>
             <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: var(--text-body);">
-                Atuação executiva na liderança de projetos de transformação digital, governança corporativa e planejamento estratégico de custos.
+                Atuação executiva na liderança de projetos de transformação digital, governança corporativa e planejamento estratégico de custos em Joinville e região.
             </p>
             <div class="profile-tags">
                 <span class="tag">Sistemas de Informação</span>
@@ -691,6 +743,38 @@
         </div>
     </div>
 
+    <!-- SEÇÃO 2: CASOS DE USO / PROVA SOCIAL -->
+    <section class="section" id="cases">
+        <div class="section-header">
+            <div class="badge"><i class="fa-solid fa-bullseye"></i> Resultados Reais</div>
+            <h2>Impacto Prático & Casos de Sucesso</h2>
+            <p>Exemplos de como a consultoria gera valor imediato para operações corporativas e industriais.</p>
+        </div>
+
+        <div class="cases-grid">
+            <div class="case-card">
+                <span class="case-tag">Setor Industrial & Painéis Elétricos</span>
+                <div class="case-title">Otimização de Custos e Controladoria</div>
+                <div class="case-metric">-18% em Custos Operacionais</div>
+                <div class="case-desc">Reestruturação do fluxo de custos, mapeamento de ineficiências em processos e criação de DRE gerencial automatizada.</div>
+            </div>
+
+            <div class="case-card">
+                <span class="case-tag">Governança de TI</span>
+                <div class="case-title">Modernização de Infraestrutura e M365</div>
+                <div class="case-metric">100% Compliance & Segurança</div>
+                <div class="case-desc">Migração segura para nuvem Microsoft 365, políticas rigorosas de cibersegurança e eliminação de gargalos no suporte interno.</div>
+            </div>
+
+            <div class="case-card">
+                <span class="case-tag">Inteligência de Dados (BI)</span>
+                <div class="case-title">Dashboards Executivos de Performance</div>
+                <div class="case-metric">Decisões em Tempo Real</div>
+                <div class="case-desc">Integração entre o ERP corporativo e painéis em BI, permitindo que a diretoria acompanhe a margem de contribuição diária.</div>
+            </div>
+        </div>
+    </section>
+
     <!-- SOBRE MIM -->
     <section class="section" id="sobre">
         <div class="about-grid">
@@ -698,7 +782,6 @@
                 <div class="badge"><i class="fa-solid fa-id-card"></i> Perfil Executivo</div>
                 <h2 style="font-size: 2.25rem; margin-bottom: 1.5rem;">Tecnologia Alinhada às Necessidades do Negócio</h2>
                 <p>Profissional versátil com mais de 15 anos de experiência em TI e Gestão Executiva, unindo visão estratégica, liderança e alto domínio técnico. Bacharel em Sistemas de Informação, com MBA em Gestão de TI e MBA em Gestão Financeira e Controladoria, atuo na condução de iniciativas de transformação digital, governança corporativa e modernização de processos.</p>
-                <br>
                 <p>Destaco-me pela capacidade de traduzir tecnologia para os objetivos reais do negócio, alinhando planejamento estratégico, gestão de custos e compliance à inovação contínua. Com perfil analítico, colaborativo e orientado a dados, busco conectar pessoas, processos e tecnologia para gerar impacto sustentável nas organizações.</p>
             </div>
             <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem;">
@@ -749,7 +832,7 @@
         </div>
     </section>
 
-    <!-- METODOLOGIA DE TRABALHO / COMO FUNCIONA -->
+    <!-- METODOLOGIA DE TRABALHO -->
     <section class="section" id="metodologia">
         <div class="section-header">
             <div class="badge"><i class="fa-solid fa-diagram-project"></i> Metodologia</div>
@@ -879,7 +962,7 @@
                 <div class="service-card" style="border-left: 4px solid var(--primary-light);">
                     <div style="font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Bacharelado</div>
                     <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Sistemas de Informação</h3>
-                    <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Faculdade Anhanguera</p>
+                    <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Faculdade Anhunguera</p>
                     <p style="font-size: 0.85rem;">Desenvolvimento de sistemas, arquitetura de banco de dados e engenharia de software.</p>
                 </div>
 
@@ -895,13 +978,13 @@
         </div>
     </section>
 
-    <!-- FORMULÁRIO / CONTATO -->
+    <!-- FORMULÁRIO COM UX APRIMORADA -->
     <section class="section" id="contato">
         <div class="contact-container">
             <div class="contact-info">
                 <div class="badge"><i class="fa-solid fa-paper-plane"></i> Contato Direto</div>
                 <h3>Vamos conversar sobre o seu projeto?</h3>
-                <p>Preencha o formulário ao lado para agendarmos uma reunião inicial ou conecte-se diretamente através dos canais oficiais.</p>
+                <p>Preencha o formulário para agendarmos uma reunião de diagnóstico sem compromisso ou conecte-se diretamente através dos canais oficiais.</p>
                 
                 <div class="contact-method">
                     <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
@@ -915,12 +998,12 @@
                     <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                     <div>
                         <div style="font-size: 0.85rem; color: var(--text-muted);">E-mail Direto</div>
-                        <a href="mailto:nikstern@gmail.com" style="color: var(--text-heading); text-decoration: none; font-weight: 600;">nicolasninstern@gmail.com</a>
+                        <a href="mailto:nnsconsultoria@gmail.com" style="color: var(--text-heading); text-decoration: none; font-weight: 600;">						nnsconsultoria@gmail.com</a>
                     </div>
                 </div>
             </div>
 
-            <!-- FORMULÁRIO -->
+            <!-- FORMULÁRIO OTIMIZADO -->
             <form class="contact-form" action="https://formspree.io/f/xbjnqkyv" method="POST">
                 <div class="form-group">
                     <label for="name">Seu Nome / Nome da Empresa</label>
@@ -944,17 +1027,21 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER COM COPYRIGHT DINÂMICO -->
     <footer>
         <div class="footer-socials">
             <a href="https://www.linkedin.com/in/sternnicolas/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
             <a href="mailto:nikstern@gmail.com"><i class="fa-solid fa-envelope"></i></a>
         </div>
-        <p>&copy; 2025 Nicolas N. Stern - NNS Consultoria Inteligente. Todos os direitos reservados.</p>
+        <p>&copy; <span id="year"></span> Nicolas N. Stern - NNS Consultoria Inteligente. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- SCRIPT TABS INTERATIVAS -->
+    <!-- SCRIPTS INTERATIVOS -->
     <script>
+        // Copyright Dinâmico
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Sistema de Tabs
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");

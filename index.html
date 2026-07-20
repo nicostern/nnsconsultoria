@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas N. Stern | NNS Consultoria Inteligente</title>
+    <style>
+        :root {
+            --primary-color: #0F172A;
+            --accent-color: #2563EB;
+            --accent-hover: #1D4ED8;
+            --text-main: #334155;
+            --text-muted: #64748B;
+            --bg-light: #F8FAFC;
+            --white: #FFFFFF;
+            --border-color: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+        }
+
+        body {
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            color: #94A3B8;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #CBD5E1;
+            margin-bottom: 2rem;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1050px;
+            margin: -2rem auto 3rem auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Cards Gerais */
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Grid de Serviços / Pilares */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .service-card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.75rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Seção Contato / CTA */
+        .contact-box {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 0.85rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            background-color: var(--white);
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-content">
+            <h1>Nicolas N. Stern</h1>
+            <div class="subtitle">Gerente Administrativo | Especialista em Controladoria</div>
+            <p>NNS Consultoria Inteligente: Conectando gestão estratégica, inteligência de dados e otimização de processos corporativos.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Perfil Profissional -->
+        <section class="card">
+            <h2>Sobre Mim</h2>
+            <p>
+                Atuo como <strong>Gerente Administrativo</strong> com sólida experiência na condução de operações corporativas, processos de tomada de decisão e eficiência organizacional. Sou pós-graduado em <strong>Controladoria</strong>, área que me proporciona uma visão analítica rigorosa sobre gestão financeira, custos e governança.
+            </p>
+            <p>
+                Através da <strong>NNS Consultoria Inteligente</strong>, auxilio empresas e executivos no alinhamento entre diretrizes administrativas, dados estratégicos e soluções tecnológicas para maximizar resultados e garantir a sustentabilidade dos negócios.
+            </p>
+        </section>
+
+        <!-- Pilares de Atuação -->
+        <section class="card">
+            <h2>Especialidades & Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>📊 Gestão & Controladoria</h3>
+                    <p>Análise de indicadores financeiros, estruturação de processos administrativos, gestão de custos e apoio à governança corporativa para maximizar a margem operacional.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📈 Análise de Dados & BI</h3>
+                    <p>Transformação de dados operacionais e financeiros em relatórios gerenciais e dashboards dinâmicos para subsidiar decisões estratégicas e rápidas.</p>
+                </div>
+                <div class="service-card">
+                    <h3>💻 TI & Processos Digitais</h3>
+                    <p>Apoio na escolha e otimização de sistemas de gestão (ERP/CRM), automação de fluxos de trabalho e implementação de tecnologias focadas na eficiência do negócio.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato e Redes -->
+        <section class="card">
+            <h2>Contato & Conexão</h2>
+            <div class="contact-box">
+                <p>
+                    Quer otimizar a gestão e os indicadores da sua empresa ou trocar experiências sobre controladoria e processos? Vamos nos conectar.
+                </p>
+                <a href="https://www.linkedin.com/in/sternnicolas/" target="_blank" rel="noopener noreferrer" class="cta-button">
+                    Acessar Perfil no LinkedIn
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Nicolas N. Stern - NNS Consultoria Inteligente. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

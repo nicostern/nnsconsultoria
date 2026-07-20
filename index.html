@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolas N. Stern | NNS Consultoria Inteligente</title>
     
-    <!-- Meta Tags para SEO e Compartilhamento Social (WhatsApp/LinkedIn) -->
+    <!-- Meta Tags para SEO e Compartilhamento Social -->
     <meta name="description" content="NNS Consultoria Inteligente: 15+ anos de experiência unindo Gestão Estratégica, Controladoria Financeira e Transformação Digital de TI.">
     <meta property="og:title" content="Nicolas N. Stern | NNS Consultoria Inteligente">
     <meta property="og:description" content="Conectando pessoas, processos e tecnologia para gerar impacto positivo e sustentável nas organizações.">
@@ -201,6 +201,8 @@
             gap: 0.5rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+            border: none;
+            cursor: pointer;
         }
 
         .btn-primary:hover {
@@ -336,7 +338,33 @@
             font-size: 1.05rem;
         }
 
-        /* --- SERVIÇOS E CARDS --- */
+        /* --- SOBRE MIM --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-heading);
+            font-weight: 500;
+        }
+
+        .feature-list i {
+            color: var(--accent);
+        }
+
+        /* --- SERVIÇOS & CARDS --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -372,64 +400,180 @@
             margin-bottom: 1.5rem;
         }
 
-        .service-card h3 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .service-card p {
-            color: var(--text-body);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* --- SOBRE MIM --- */
-        .about-grid {
+        /* --- FLUXO / METODOLOGIA DE TRABALHO --- */
+        .workflow-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            position: relative;
         }
 
-        .feature-list {
-            list-style: none;
-            margin-top: 1.5rem;
+        .workflow-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            transition: transform 0.3s ease;
         }
 
-        .feature-list li {
+        .workflow-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .step-number {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-primary);
+            color: #fff;
+            border-radius: 12px;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .workflow-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .workflow-card p {
+            font-size: 0.9rem;
+            color: var(--text-body);
+        }
+
+        /* --- TABS SYSTEM (FORMAÇÃO E CERTIFICAÇÕES) --- */
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-body);
+            padding: 0.8rem 1.75rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--accent);
             color: var(--text-heading);
-            font-weight: 500;
         }
 
-        .feature-list i {
-            color: var(--accent);
+        .tab-btn.active {
+            background: var(--gradient-primary);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
 
-        /* --- CONTATO & CTA --- */
-        .cta-section {
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- FORMULÁRIO DE CONTATO --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 24px;
-            padding: 4rem 2rem;
-            text-align: center;
+            padding: 3.5rem 2.5rem;
             background-image: var(--gradient-glow);
-            margin-bottom: 6rem;
         }
 
-        .cta-section h2 {
-            font-size: 2.25rem;
+        .contact-info h3 {
+            font-size: 1.75rem;
             margin-bottom: 1rem;
         }
 
-        .cta-section p {
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            font-size: 1.1rem;
+        .contact-info p {
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.25rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-heading);
+        }
+
+        .form-control {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.85rem 1rem;
+            color: var(--text-heading);
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
         }
 
         /* --- FOOTER --- */
@@ -460,7 +604,7 @@
 
         /* --- RESPONSIVIDADE --- */
         @media (max-width: 992px) {
-            .hero, .about-grid, .services-grid {
+            .hero, .about-grid, .contact-container {
                 grid-template-columns: 1fr;
             }
             .hero h1 {
@@ -485,7 +629,8 @@
             <ul class="nav-links">
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#formacao">Formação & Certificações</a></li>
+                <li><a href="#metodologia">Como Funciona</a></li>
+                <li><a href="#formacao">Formação</a></li>
                 <li><a href="#contato" class="btn-nav">Falar Conosco</a></li>
             </ul>
         </div>
@@ -517,14 +662,13 @@
             <div class="profile-title">Nicolas N. Stern</div>
             <div class="profile-subtitle">NNS Consultoria Inteligente</div>
             <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: var(--text-body);">
-                Atuação executiva na liderança de projetos de transformação digital, governança corporativa, BI, auditoria e planejamento estratégico.
+                Atuação executiva na liderança de projetos de transformação digital, governança corporativa e planejamento estratégico de custos.
             </p>
             <div class="profile-tags">
                 <span class="tag">Sistemas de Informação</span>
                 <span class="tag">MBA Gestão de TI</span>
                 <span class="tag">MBA Controladoria</span>
                 <span class="tag">Marketing Digital</span>
-                <span class="tag">Business Intelligence</span>
             </div>
         </div>
     </section>
@@ -562,7 +706,7 @@
                 <ul class="feature-list">
                     <li><i class="fa-solid fa-circle-check"></i> Formação em Sistemas de Informação & MBA em TI</li>
                     <li><i class="fa-solid fa-circle-check"></i> MBA em Gestão Financeira, Auditoria e Controladoria</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Formação Executiva "Managing Yourself" por Harvard</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Formação Executiva "Managing Yourself" por Harvard Online</li>
                     <li><i class="fa-solid fa-circle-check"></i> Liderança em Transformação Digital, Riscos e Compliance</li>
                     <li><i class="fa-solid fa-circle-check"></i> Certificações Oficiais Microsoft, CompTIA e Google</li>
                 </ul>
@@ -605,122 +749,198 @@
         </div>
     </section>
 
-    <!-- SEÇÃO FORMAÇÃO ACADÊMICA E CERTIFICAÇÕES DE MERCADO -->
-    <section class="section" id="formacao">
+    <!-- METODOLOGIA DE TRABALHO / COMO FUNCIONA -->
+    <section class="section" id="metodologia">
         <div class="section-header">
-            <div class="badge"><i class="fa-solid fa-graduation-cap"></i> Qualificação de Alto Nível</div>
-            <h2>Formação & Certificações de Mercado</h2>
-            <p>Acreditações oficiais e acadêmicas das principais instituições e Big Techs globais.</p>
+            <div class="badge"><i class="fa-solid fa-diagram-project"></i> Metodologia</div>
+            <h2>Como Funciona a Consultoria</h2>
+            <p>Um processo estruturado de 4 etapas para transformar gargalos em vantagem competitiva.</p>
         </div>
 
-        <!-- CERTIFICAÇÕES DE MERCADO -->
-        <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.35rem;">
-            <i class="fa-solid fa-award" style="color: var(--accent);"></i> Certificações Oficiais
-        </h3>
-        
-        <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 4rem;">
-            
-            <!-- MICROSOFT -->
-            <div class="service-card" style="border-top: 3px solid #00A4EF;">
-                <div style="font-size: 1.75rem; color: #00A4EF; margin-bottom: 1rem;">
-                    <i class="fa-brands fa-microsoft"></i>
-                </div>
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Microsoft 365 Certified</h3>
-                <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Microsoft</p>
-                <p style="font-size: 0.85rem;">Administração avançada de ambiente Microsoft 365, colaboração corporativa e produtividade em nuvem.</p>
+        <div class="workflow-grid">
+            <div class="workflow-card">
+                <div class="step-number">01</div>
+                <h3>Diagnóstico 360°</h3>
+                <p>Mapeamento detalhado dos processos atuais, infraestrutura de TI, fluxos financeiros e pontos de ineficiência operacional.</p>
             </div>
 
-            <!-- COMPTIA -->
-            <div class="service-card" style="border-top: 3px solid #C00000;">
-                <div style="font-size: 1.75rem; color: #C00000; margin-bottom: 1rem;">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">CompTIA Security+</h3>
-                <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">CompTIA</p>
-                <p style="font-size: 0.85rem;">Certificação internacional em segurança da informação, gestão de riscos e proteção de infraestruturas.</p>
+            <div class="workflow-card">
+                <div class="step-number">02</div>
+                <h3>Plano Estratégico</h3>
+                <p>Desenvolvimento de um plano de ação personalizado focado em redução de custos, mitigação de riscos e ganho de produtividade.</p>
             </div>
 
-            <!-- GOOGLE -->
-            <div class="service-card" style="border-top: 3px solid #EA4335;">
-                <div style="font-size: 1.75rem; color: #EA4335; margin-bottom: 1rem;">
-                    <i class="fa-brands fa-google"></i>
-                </div>
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Certificação Google Ads</h3>
-                <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Google</p>
-                <p style="font-size: 0.85rem;">Estratégias avançadas de tráfego pago, aquisição de clientes e otimização de campanhas de performance.</p>
+            <div class="workflow-card">
+                <div class="step-number">03</div>
+                <h3>Execução & Automação</h3>
+                <p>Implementação prática de melhorias, integração de sistemas, criação de dashboards e otimização de ferramentas de gestão.</p>
             </div>
 
-        </div>
-
-        <!-- GRADUAÇÃO E MBAS -->
-        <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.35rem;">
-            <i class="fa-solid fa-university" style="color: var(--accent);"></i> Formação Acadêmica & MBAs
-        </h3>
-
-        <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
-            
-            <!-- UNINTER -->
-            <div class="service-card" style="border-left: 4px solid var(--accent);">
-                <div style="font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Pós-Graduação Lato Sensu</div>
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">MBA em Gestão Financeira, Auditoria e Controladoria</h3>
-                <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">UNINTER</p>
-                <p style="font-size: 0.85rem;">Gestão de fluxo de caixa, análise de desempenho financeiro, governança e planejamento orçamentário.</p>
+            <div class="workflow-card">
+                <div class="step-number">04</div>
+                <h3>Governança & Evolução</h3>
+                <p>Acompanhamento contínuo dos indicadores de desempenho (KPIs), treinamento da equipe e refinamento constante dos processos.</p>
             </div>
-
-            <!-- HARVARD -->
-            <div class="service-card" style="border-left: 4px solid #A51C30;">
-                <div style="font-size: 0.75rem; color: #F87171; font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Executivo / Liderança</div>
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Managing Yourself</h3>
-                <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Harvard Online</p>
-                <p style="font-size: 0.85rem;">Gestão de carreira, autoliderança, produtividade e gestão estratégica do tempo.</p>
-            </div>
-
-            <!-- UNOPAR -->
-            <div class="service-card" style="border-left: 4px solid var(--primary-light);">
-                <div style="font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Master of Business Administration</div>
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">MBA em Gestão de Tecnologia da Informação</h3>
-                <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">UNOPAR</p>
-                <p style="font-size: 0.85rem;">Gestão de riscos, compliance tecnológico e planejamento estratégico de TI.</p>
-            </div>
-
-            <!-- ANHANGUERA -->
-            <div class="service-card" style="border-left: 4px solid var(--primary-light);">
-                <div style="font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Curso Superior de Tecnologia</div>
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Marketing Digital</h3>
-                <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Anhanguera Educacional</p>
-                <p style="font-size: 0.85rem;">Inbound Marketing, estratégias de conteúdo e métricas de crescimento acelerado.</p>
-            </div>
-
-            <!-- UNIVERSIDADE POSITIVO -->
-            <div class="service-card" style="border-left: 4px solid var(--primary-light);">
-                <div style="font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Bacharelado</div>
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Sistemas de Informação</h3>
-                <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Faculdade Anhanguera</p>
-                <p style="font-size: 0.85rem;">Desenvolvimento de sistemas, arquitetura de banco de dados e engenharia de software.</p>
-            </div>
-
-            <!-- ENAP & SOCIESC -->
-            <div class="service-card" style="border-left: 4px solid var(--border);">
-                <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Especializações Técnicas</div>
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Gestão de TI & Suporte Especializado</h3>
-                <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Sociesc Educação e Tecnologia</p>
-                <p style="font-size: 0.85rem;">Administração de infraestruturas de TI, suporte avançado a sistemas e gestão de serviços.</p>
-            </div>
-
         </div>
     </section>
 
-    <!-- CALL TO ACTION / CONTATO -->
-    <section class="section" id="contato">
-        <div class="cta-section">
-            <div class="badge"><i class="fa-solid fa-paper-plane"></i> Contato Direto</div>
-            <h2>Pronto para transformar desafios em oportunidades?</h2>
-            <p>Entre em contato para discutirmos como otimizar os processos, a tecnologia e a saúde financeira da sua empresa.</p>
-            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                <a href="https://www.linkedin.com/in/sternnicolas/" target="_blank" rel="noopener" class="btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">
-                    <i class="fa-brands fa-linkedin"></i> Conectar no LinkedIn
-                </a>
+    <!-- SEÇÃO FORMAÇÃO ACADÊMICA E CERTIFICAÇÕES EM TABS -->
+    <section class="section" id="formacao">
+        <div class="section-header">
+            <div class="badge"><i class="fa-solid fa-graduation-cap"></i> Qualificação de Alto Nível</div>
+            <h2>Formação & Certificações</h2>
+            <p>Acreditações oficiais e acadêmicas das principais instituições e Big Techs globais.</p>
+        </div>
+
+        <!-- TABS DE NAVEGAÇÃO -->
+        <div class="tabs-container">
+            <button class="tab-btn active" onclick="openTab(event, 'tab-certificacoes')">
+                <i class="fa-solid fa-award"></i> Certificações de Mercado
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-academic')">
+                <i class="fa-solid fa-university"></i> Formação Acadêmica & MBAs
+            </button>
+        </div>
+
+        <!-- ABA 1: CERTIFICAÇÕES -->
+        <div id="tab-certificacoes" class="tab-content active">
+            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                
+                <!-- MICROSOFT -->
+                <div class="service-card" style="border-top: 3px solid #00A4EF;">
+                    <div style="font-size: 1.75rem; color: #00A4EF; margin-bottom: 1rem;">
+                        <i class="fa-brands fa-microsoft"></i>
+                    </div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Microsoft 365 Certified</h3>
+                    <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Microsoft</p>
+                    <p style="font-size: 0.85rem;">Administração avançada de ambiente Microsoft 365, colaboração corporativa e produtividade em nuvem.</p>
+                </div>
+
+                <!-- COMPTIA -->
+                <div class="service-card" style="border-top: 3px solid #C00000;">
+                    <div style="font-size: 1.75rem; color: #C00000; margin-bottom: 1rem;">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">CompTIA Security+</h3>
+                    <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">CompTIA</p>
+                    <p style="font-size: 0.85rem;">Certificação internacional em segurança da informação, gestão de riscos e proteção de infraestruturas.</p>
+                </div>
+
+                <!-- GOOGLE -->
+                <div class="service-card" style="border-top: 3px solid #EA4335;">
+                    <div style="font-size: 1.75rem; color: #EA4335; margin-bottom: 1rem;">
+                        <i class="fa-brands fa-google"></i>
+                    </div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Certificação Google Ads</h3>
+                    <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Google</p>
+                    <p style="font-size: 0.85rem;">Estratégias avançadas de tráfego pago, aquisição de clientes e otimização de campanhas de performance.</p>
+                </div>
+
             </div>
+        </div>
+
+        <!-- ABA 2: ACADÊMICO -->
+        <div id="tab-academic" class="tab-content">
+            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                
+                <!-- UNINTER -->
+                <div class="service-card" style="border-left: 4px solid var(--accent);">
+                    <div style="font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Pós-Graduação Lato Sensu</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">MBA em Gestão Financeira, Auditoria e Controladoria</h3>
+                    <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">UNINTER</p>
+                    <p style="font-size: 0.85rem;">Gestão de fluxo de caixa, análise de desempenho financeiro, governança e planejamento orçamentário.</p>
+                </div>
+
+                <!-- HARVARD -->
+                <div class="service-card" style="border-left: 4px solid #A51C30;">
+                    <div style="font-size: 0.75rem; color: #F87171; font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Executivo / Liderança</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Managing Yourself</h3>
+                    <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Harvard Online</p>
+                    <p style="font-size: 0.85rem;">Gestão de carreira, autoliderança, produtividade e gestão estratégica do tempo.</p>
+                </div>
+
+                <!-- UNOPAR -->
+                <div class="service-card" style="border-left: 4px solid var(--primary-light);">
+                    <div style="font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Master of Business Administration</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">MBA em Gestão de Tecnologia da Informação</h3>
+                    <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">UNOPAR</p>
+                    <p style="font-size: 0.85rem;">Gestão de riscos, compliance tecnológico e planejamento estratégico de TI.</p>
+                </div>
+
+                <!-- ANHANGUERA -->
+                <div class="service-card" style="border-left: 4px solid var(--primary-light);">
+                    <div style="font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Curso Superior de Tecnologia</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Marketing Digital</h3>
+                    <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Anhanguera Educacional</p>
+                    <p style="font-size: 0.85rem;">Inbound Marketing, estratégias de conteúdo e métricas de crescimento acelerado.</p>
+                </div>
+
+                <!-- UNIVERSIDADE POSITIVO -->
+                <div class="service-card" style="border-left: 4px solid var(--primary-light);">
+                    <div style="font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Bacharelado</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Sistemas de Informação</h3>
+                    <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Faculdade Anhanguera</p>
+                    <p style="font-size: 0.85rem;">Desenvolvimento de sistemas, arquitetura de banco de dados e engenharia de software.</p>
+                </div>
+
+                <!-- ENAP & SOCIESC -->
+                <div class="service-card" style="border-left: 4px solid var(--border);">
+                    <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">Especializações Técnicas</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Gestão de TI & Suporte Especializado</h3>
+                    <p style="color: var(--text-heading); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Sociesc Educação e Tecnologia</p>
+                    <p style="font-size: 0.85rem;">Administração de infraestruturas de TI, suporte avançado a sistemas e gestão de serviços.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO / CONTATO -->
+    <section class="section" id="contato">
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="badge"><i class="fa-solid fa-paper-plane"></i> Contato Direto</div>
+                <h3>Vamos conversar sobre o seu projeto?</h3>
+                <p>Preencha o formulário ao lado para agendarmos uma reunião inicial ou conecte-se diretamente através dos canais oficiais.</p>
+                
+                <div class="contact-method">
+                    <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">LinkedIn Profissional</div>
+                        <a href="https://www.linkedin.com/in/sternnicolas/" target="_blank" rel="noopener" style="color: var(--text-heading); text-decoration: none; font-weight: 600;">/in/sternnicolas</a>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">E-mail Direto</div>
+                        <a href="mailto:nikstern@gmail.com" style="color: var(--text-heading); text-decoration: none; font-weight: 600;">nicolasninstern@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORMULÁRIO -->
+            <form class="contact-form" action="https://formspree.io/f/xbjnqkyv" method="POST">
+                <div class="form-group">
+                    <label for="name">Seu Nome / Nome da Empresa</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Ex: João Silva (Empresa ABC)" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail Profissional</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="seuemail@empresa.com.br" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Como a NNS Consultoria pode te ajudar?</label>
+                    <textarea id="message" name="message" class="form-control" placeholder="Descreva brevemente sua necessidade em TI, Controladoria ou Processos..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary" style="justify-content: center; width: 100%; margin-top: 0.5rem;">
+                    Enviar Mensagem <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
         </div>
     </section>
 
@@ -732,6 +952,23 @@
         </div>
         <p>&copy; 2025 Nicolas N. Stern - NNS Consultoria Inteligente. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- SCRIPT TABS INTERATIVAS -->
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 
 </body>
 </html>
